@@ -1,0 +1,122 @@
+{
+  "name": "Guardian",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string"
+    },
+    "cpf": {
+      "type": "string"
+    },
+    "rg": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "secondary_phone": {
+      "type": "string"
+    },
+    "relationship": {
+      "type": "string",
+      "enum": [
+        "pai",
+        "mae",
+        "avo",
+        "tio",
+        "responsavel_legal",
+        "outro"
+      ]
+    },
+    "profession": {
+      "type": "string"
+    },
+    "address": {
+      "type": "object",
+      "properties": {
+        "street": {
+          "type": "string"
+        },
+        "number": {
+          "type": "string"
+        },
+        "neighborhood": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "zip_code": {
+          "type": "string"
+        }
+      }
+    },
+    "student_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "is_financial_responsible": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "full_name"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "secretaria"
+          }
+        },
+        {
+          "data.email": "{{user.email}}"
+        },
+        {
+          "data.student_ids": {
+            "$in": [
+              "{{user.data.student_id}}"
+            ]
+          }
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "data.email": "{{user.email}}"
+        }
+      ]
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

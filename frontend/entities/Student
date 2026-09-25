@@ -1,0 +1,191 @@
+{
+  "name": "Student",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string"
+    },
+    "registration_number": {
+      "type": "string",
+      "description": "N\u00famero de matr\u00edcula"
+    },
+    "birth_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "gender": {
+      "type": "string",
+      "enum": [
+        "masculino",
+        "feminino",
+        "outro"
+      ]
+    },
+    "cpf": {
+      "type": "string"
+    },
+    "rg": {
+      "type": "string"
+    },
+    "photo_url": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "address": {
+      "type": "object",
+      "properties": {
+        "street": {
+          "type": "string"
+        },
+        "number": {
+          "type": "string"
+        },
+        "complement": {
+          "type": "string"
+        },
+        "neighborhood": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "zip_code": {
+          "type": "string"
+        }
+      }
+    },
+    "education_level": {
+      "type": "string",
+      "description": "N\u00edvel de ensino",
+      "enum": [
+        "infantil",
+        "fundamental_1",
+        "fundamental_2",
+        "medio",
+        "tecnico",
+        "graduacao",
+        "pos_graduacao"
+      ]
+    },
+    "grade_level": {
+      "type": "string",
+      "description": "S\u00e9rie / Semestre / M\u00f3dulo"
+    },
+    "class_name": {
+      "type": "string",
+      "description": "Turma (ex: A, B)"
+    },
+    "shift": {
+      "type": "string",
+      "enum": [
+        "manha",
+        "tarde",
+        "noite",
+        "integral",
+        "ead"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ativo",
+        "inativo",
+        "transferido",
+        "formado",
+        "trancado"
+      ],
+      "default": "ativo"
+    },
+    "guardian_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "observations": {
+      "type": "string"
+    },
+    "enrollment_date": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "full_name"
+  ],
+  "rls": {
+    "create": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "secretaria"
+          }
+        }
+      ]
+    },
+    "read": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "secretaria"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "professor"
+          }
+        },
+        {
+          "id": "{{user.id}}"
+        },
+        {
+          "data.guardian_ids": {
+            "$in": [
+              "{{user.id}}"
+            ]
+          }
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "secretaria"
+          }
+        },
+        {
+          "id": "{{user.id}}"
+        }
+      ]
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

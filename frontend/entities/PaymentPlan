@@ -1,0 +1,78 @@
+{
+  "name": "PaymentPlan",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nome do plano (ex: Plano Fundamental I A - 2025)"
+    },
+    "student_id": {
+      "type": "string"
+    },
+    "student_name": {
+      "type": "string"
+    },
+    "registration_fee_id": {
+      "type": "string",
+      "description": "ID da taxa de matr\u00edcula"
+    },
+    "registration_fee_name": {
+      "type": "string"
+    },
+    "registration_fee_amount": {
+      "type": "number",
+      "description": "Valor original da matr\u00edcula"
+    },
+    "registration_discount_id": {
+      "type": "string",
+      "description": "Desconto aplicado na matr\u00edcula"
+    },
+    "registration_discount_name": {
+      "type": "string"
+    },
+    "registration_final_amount": {
+      "type": "number",
+      "description": "Valor final da matr\u00edcula ap\u00f3s desconto"
+    },
+    "monthly_fee_id": {
+      "type": "string",
+      "description": "ID da mensalidade"
+    },
+    "monthly_fee_name": {
+      "type": "string"
+    },
+    "monthly_fee_amount": {
+      "type": "number",
+      "description": "Valor original da mensalidade"
+    },
+    "monthly_discount_id": {
+      "type": "string",
+      "description": "Desconto aplicado na mensalidade"
+    },
+    "monthly_discount_name": {
+      "type": "string"
+    },
+    "monthly_final_amount": {
+      "type": "number",
+      "description": "Valor final da mensalidade ap\u00f3s desconto"
+    },
+    "year": {
+      "type": "number"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ativo",
+        "inativo",
+        "suspenso"
+      ],
+      "default": "ativo"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

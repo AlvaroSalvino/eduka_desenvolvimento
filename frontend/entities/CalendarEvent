@@ -1,0 +1,48 @@
+{
+  "name": "CalendarEvent",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "feriado",
+        "prova",
+        "reuniao",
+        "recesso",
+        "evento",
+        "entrega_notas"
+      ]
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "all_day": {
+      "type": "boolean",
+      "default": true
+    },
+    "target_classes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "color": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "start_date"
+  ]
+}

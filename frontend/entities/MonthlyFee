@@ -1,0 +1,48 @@
+{
+  "name": "MonthlyFee",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nome da mensalidade (ex: Mensalidade Fundamental I 2025)"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Valor da mensalidade"
+    },
+    "description": {
+      "type": "string"
+    },
+    "year": {
+      "type": "number"
+    },
+    "education_level": {
+      "type": "string",
+      "enum": [
+        "infantil",
+        "fundamental_1",
+        "fundamental_2",
+        "medio",
+        "tecnico",
+        "graduacao",
+        "pos_graduacao"
+      ]
+    },
+    "due_day": {
+      "type": "number",
+      "description": "Dia de vencimento (1-31)"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ativo",
+        "inativo"
+      ],
+      "default": "ativo"
+    }
+  },
+  "required": [
+    "name",
+    "amount"
+  ]
+}

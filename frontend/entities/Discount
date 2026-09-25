@@ -1,0 +1,48 @@
+{
+  "name": "Discount",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nome do desconto (ex: Desconto Irm\u00e3o, Bolsa Social)"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "percentual",
+        "fixo"
+      ],
+      "description": "Tipo de desconto: percentual (%) ou valor fixo (R$)"
+    },
+    "value": {
+      "type": "number",
+      "description": "Valor do desconto (percentual ou fixo)"
+    },
+    "applies_to": {
+      "type": "string",
+      "enum": [
+        "matricula",
+        "mensalidade",
+        "ambos"
+      ],
+      "description": "Onde o desconto \u00e9 aplicado"
+    },
+    "description": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ativo",
+        "inativo"
+      ],
+      "default": "ativo"
+    }
+  },
+  "required": [
+    "name",
+    "type",
+    "value",
+    "applies_to"
+  ]
+}

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <!-- Básico -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ies.nome|default:'Eduka'}} | Sistema Escolar Completo para Gestão Educacional</title>
+    <meta name="description" content="Eduka é um sistema completo de gestão escolar com dashboard para Admin, Secretaria, Financeiro, Professores, Alunos e Responsáveis. Ideal para ensino básico, médio, técnico e superior." />
+    <meta name="keywords" content="gestão escolar, sistema escolar, software educacional, dashboard escola, ERP escolar, educação básica, ensino médio, ensino técnico, gestão acadêmica" />
+    <meta name="author" content="{{ies.nome|default:'Eduka'}}" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ies.url|default:'https://eduka.com.br/'}}" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- Manifest (PWA) -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Open Graph (Facebook / LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ies.nome|default:'Eduka'}} | Sistema Escolar Completo" />
+    <meta property="og:description" content="Sistema moderno de gestão escolar com múltiplos perfis: Admin, Secretaria, Financeiro, Professores, Alunos e Responsáveis." />
+    <meta property="og:url" content="{{ies.url|default:'https://eduka.com.br/'}}" />
+    <meta property="og:image" content="https://eduka.com.br/og-image.png" />
+    <meta property="og:site_name" content="{{ies.nome|default:'Eduka'}}" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Eduka | Sistema Escolar Completo" />
+    <meta name="twitter:description" content="Gestão escolar eficiente com dashboards completos para todos os perfis educacionais." />
+    <meta name="twitter:image" content="https://eduka.com.br/og-image.png" />
+
+    <!-- Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+
+    <!-- Tema -->
+    <meta name="theme-color" content="#0f172a" />
+
+    <!-- Dados estruturados (SEO avançado) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "{{ies.nome|default:'Eduka'}}",
+        "url": "{{ies.url|default:'https://eduka.com.br/'}}",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Web",
+        "description": "Sistema completo de gestão escolar com múltiplos perfis para administração, professores, alunos e responsáveis.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "BRL"
+        },
+        "creator": {
+          "@type": "Organization",
+          "name": "{{ies.nome|default:'Eduka'}}"
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <noscript>
+      Você precisa habilitar o JavaScript para utilizar o sistema. {{ies.nome|default:'Eduka'}}
+    </noscript>
+
+    <div id="root"></div>
+
+    <!-- React App -->
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

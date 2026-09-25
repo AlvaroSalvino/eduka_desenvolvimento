@@ -1,0 +1,39 @@
+{
+  "name": "Attendance",
+  "type": "object",
+  "properties": {
+    "student_id": {
+      "type": "string"
+    },
+    "student_name": {
+      "type": "string"
+    },
+    "class_id": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "presente",
+        "falta",
+        "justificado",
+        "atrasado"
+      ]
+    },
+    "subject": {
+      "type": "string"
+    },
+    "justification": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "student_id",
+    "date",
+    "status"
+  ]
+}

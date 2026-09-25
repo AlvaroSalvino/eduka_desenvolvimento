@@ -1,0 +1,45 @@
+{
+  "name": "RegistrationFee",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nome da taxa de matr\u00edcula (ex: Matr\u00edcula 2025)"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Valor da matr\u00edcula"
+    },
+    "description": {
+      "type": "string"
+    },
+    "year": {
+      "type": "number",
+      "description": "Ano letivo"
+    },
+    "education_level": {
+      "type": "string",
+      "enum": [
+        "infantil",
+        "fundamental_1",
+        "fundamental_2",
+        "medio",
+        "tecnico",
+        "graduacao",
+        "pos_graduacao"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ativo",
+        "inativo"
+      ],
+      "default": "ativo"
+    }
+  },
+  "required": [
+    "name",
+    "amount"
+  ]
+}

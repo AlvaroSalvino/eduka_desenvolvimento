@@ -1,0 +1,79 @@
+{
+  "name": "AcademicGrade",
+  "type": "object",
+  "properties": {
+    "student_id": {
+      "type": "string"
+    },
+    "student_name": {
+      "type": "string"
+    },
+    "class_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "education_level": {
+      "type": "string",
+      "enum": [
+        "infantil",
+        "fundamental_1",
+        "fundamental_2",
+        "medio",
+        "tecnico",
+        "graduacao",
+        "pos_graduacao"
+      ]
+    },
+    "period": {
+      "type": "string",
+      "enum": [
+        "1_bimestre",
+        "2_bimestre",
+        "3_bimestre",
+        "4_bimestre",
+        "1_semestre",
+        "2_semestre",
+        "1_modulo",
+        "2_modulo",
+        "3_modulo",
+        "4_modulo",
+        "final"
+      ],
+      "description": "Per\u00edodo de avalia\u00e7\u00e3o"
+    },
+    "grade_1": {
+      "type": "number",
+      "description": "Nota 1 / Prova 1"
+    },
+    "grade_2": {
+      "type": "number",
+      "description": "Nota 2 / Prova 2"
+    },
+    "assignment": {
+      "type": "number",
+      "description": "Trabalho / Semin\u00e1rio"
+    },
+    "average": {
+      "type": "number"
+    },
+    "year": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "aprovado",
+        "recuperacao",
+        "reprovado",
+        "em_andamento"
+      ],
+      "default": "em_andamento"
+    }
+  },
+  "required": [
+    "student_id",
+    "subject"
+  ]
+}

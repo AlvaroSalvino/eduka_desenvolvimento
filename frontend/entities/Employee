@@ -1,0 +1,65 @@
+{
+  "name": "Employee",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string"
+    },
+    "cpf": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "professor",
+        "secretaria",
+        "financeiro",
+        "coordenacao",
+        "diretoria",
+        "admin"
+      ]
+    },
+    "department": {
+      "type": "string"
+    },
+    "subjects": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Disciplinas lecionadas"
+    },
+    "hire_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ativo",
+        "afastado",
+        "desligado"
+      ],
+      "default": "ativo"
+    },
+    "photo_url": {
+      "type": "string"
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "full_name",
+    "role"
+  ]
+}

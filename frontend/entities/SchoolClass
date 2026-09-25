@@ -1,0 +1,68 @@
+{
+  "name": "SchoolClass",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Ex: 5\u00ba Ano A / Engenharia 3\u00ba Sem A"
+    },
+    "education_level": {
+      "type": "string",
+      "description": "N\u00edvel de ensino",
+      "enum": [
+        "infantil",
+        "fundamental_1",
+        "fundamental_2",
+        "medio",
+        "tecnico",
+        "graduacao",
+        "pos_graduacao"
+      ]
+    },
+    "grade_level": {
+      "type": "string",
+      "description": "S\u00e9rie / Semestre / M\u00f3dulo"
+    },
+    "course": {
+      "type": "string",
+      "description": "Curso (para T\u00e9cnico, Gradua\u00e7\u00e3o e P\u00f3s)"
+    },
+    "class_letter": {
+      "type": "string",
+      "description": "Turma (A, B, C)"
+    },
+    "shift": {
+      "type": "string",
+      "enum": [
+        "manha",
+        "tarde",
+        "noite",
+        "integral",
+        "ead"
+      ]
+    },
+    "capacity": {
+      "type": "number"
+    },
+    "current_students": {
+      "type": "number",
+      "default": 0
+    },
+    "teacher_id": {
+      "type": "string",
+      "description": "Professor / Coordenador respons\u00e1vel"
+    },
+    "teacher_name": {
+      "type": "string"
+    },
+    "year": {
+      "type": "number"
+    },
+    "room": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "name": "Invoice",
+  "type": "object",
+  "properties": {
+    "student_id": {
+      "type": "string"
+    },
+    "student_name": {
+      "type": "string"
+    },
+    "guardian_name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string",
+      "description": "Ex: Mensalidade Mar\u00e7o/2025"
+    },
+    "amount": {
+      "type": "number"
+    },
+    "discount": {
+      "type": "number",
+      "default": 0
+    },
+    "fine": {
+      "type": "number",
+      "default": 0
+    },
+    "interest": {
+      "type": "number",
+      "default": 0
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "payment_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "payment_method": {
+      "type": "string",
+      "enum": [
+        "boleto",
+        "pix",
+        "cartao",
+        "dinheiro",
+        "transferencia"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pendente",
+        "pago",
+        "atrasado",
+        "cancelado"
+      ],
+      "default": "pendente"
+    },
+    "reference_month": {
+      "type": "string",
+      "description": "YYYY-MM"
+    },
+    "barcode": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "amount",
+    "due_date"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "SchoolDocument",
+  "type": "object",
+  "properties": {
+    "student_id": {
+      "type": "string"
+    },
+    "student_name": {
+      "type": "string"
+    },
+    "document_type": {
+      "type": "string",
+      "enum": [
+        "declaracao_escolar",
+        "historico",
+        "contrato",
+        "boletim",
+        "certificado",
+        "outro"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "file_url": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "solicitado",
+        "em_analise",
+        "aprovado",
+        "entregue",
+        "rejeitado"
+      ],
+      "default": "solicitado"
+    },
+    "requested_by": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "document_type"
+  ]
+}
